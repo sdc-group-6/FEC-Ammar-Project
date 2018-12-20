@@ -1,3 +1,8 @@
+/*  Execute this file from the command line by typing:
+ *    mysql -u root < schema.sql
+ *  to execute the queries in this file.
+ */
+
 DROP DATABASE IF EXISTS grubhub;
 
 CREATE DATABASE grubhub;
@@ -16,7 +21,7 @@ CREATE TABLE restaurants (
   id INTEGER NOT NULL AUTO_INCREMENT,
   name VARCHAR(50) NOT NULL,
   address VARCHAR(50) NOT NULL,
-  phone INTEGER,
+  phone VARCHAR(50),
   PRIMARY KEY (id)
 );
 
