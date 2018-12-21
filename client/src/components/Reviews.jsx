@@ -7,6 +7,10 @@ class Review extends React.Component {
 
   }
 
+  componentDidMount() {
+    console.log("we got the rest_id",this.props.restaurant_id);
+  }
+
   render() {
     return (
       <div className="review-main">
