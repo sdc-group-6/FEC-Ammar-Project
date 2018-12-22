@@ -24,7 +24,7 @@ app.get('/reviews',(req,res) => {
 
 app.get('/reviews/:id',(req,res) => {
   // on reviews router get all reviews from the database
-  db.getReviewsById( req.params.id, (err,data) => {
+  db.getReviewsByRestaurantId( req.params.id, (err,data) => {
     if (err) {
       res.status(501).send(err);
     } else {
