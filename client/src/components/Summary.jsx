@@ -5,7 +5,7 @@ import Percentage from './Percentage.jsx';
 const Summary = (props) => (
   <div className="summary">
     <h3>Reviews for {props.restaurant_name}</h3>
-    <Stars reviews_number={props.reviews_number} rate={props.rating}/>
+    <Stars reviews_number={props.reviews_number * 3} rate={props.rating + props.delivery_rating + props.order_rating}/>
     <span>{props.reviews_number} ratings</span>
     <p>Here's what people are saying:</p>
     <div className="percentage-list">
