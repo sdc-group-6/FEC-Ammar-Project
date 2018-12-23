@@ -23,7 +23,7 @@ class ReviewsList extends React.Component {
     return (
       <div className="review-list">
         <div className="reviews-list-header">
-            <span>Sort by:</span>
+            <span>Sort by: </span>
             <select className="reviews-list-sorting">
                 <option value="0">Most recent</option>
                 <option value="1">Highest rated</option>
