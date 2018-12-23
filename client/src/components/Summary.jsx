@@ -6,7 +6,7 @@ const Summary = (props) => (
   <div className="summary">
     <h3>Reviews for {props.restaurant_name}</h3>
     <Stars reviews_number={props.reviews_number * 3} rate={props.rating + props.delivery_rating + props.order_rating}/>
-    <span>{props.reviews_number} ratings</span>
+    <p className="rating">{props.reviews_number} ratings</p>
     <p>Here's what people are saying:</p>
     <div className="percentage-list">
         <Percentage reviews_number={props.reviews_number} rate={props.rating} text="Food was good"/>
