@@ -6,20 +6,23 @@ class ReviewsList extends React.Component {
     super(props);
 
     this.state = {
-      reviews: this.props.reviews || [],
-      reviews_number: this.props.reviews_number || 0
+      reviews: [],
+      reviews_number: 0
     }
-
   }
 
   componentDidMount() {
+      this.setState({
+        reviews: this.props.reviews || [],
+        reviews_number: this.props.reviews_number || 0
+      });
 
   }
 
   render() {
     return (
       <div className="review-list">
-      reviews-list
+      <h2>hello world</h2>
       </div>
     );
   }
