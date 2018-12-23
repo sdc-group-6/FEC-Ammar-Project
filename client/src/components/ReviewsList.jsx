@@ -22,7 +22,13 @@ class ReviewsList extends React.Component {
   render() {
     return (
       <div className="review-list">
-      <h2>hello world</h2>
+        <div className="reviews-list-header">
+            <span>Sort by:</span>
+            <select className="reviews-list-sorting">
+                <option value="0">Most recent</option>
+                <option value="1">Highest rated</option>
+            </select>
+        </div>
       </div>
     );
   }

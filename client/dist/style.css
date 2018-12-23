@@ -36,4 +36,12 @@
     color: lightgray;
 }
 
-  
+.reviews-list-sorting {
+    font-size: 17px;
+    
+}
+
+.reviews-list-header {
+    align-content: space-around;
+    float: right;
+}
