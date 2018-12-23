@@ -2,8 +2,8 @@ import React from 'react';
 
 const Stars = (props) => (
   <div>
-    <h4>Stars</h4>
       <div className="starts">
+      starts filling percentage {Math.round((props.rate/props.reviews_number)*20)}
       </div>
   </div>
 );

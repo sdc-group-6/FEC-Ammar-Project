@@ -1,5 +1,4 @@
 import React from 'react';
-import $ from 'jquery';
 import Summary from './Summary.jsx';
 
 class Review extends React.Component {

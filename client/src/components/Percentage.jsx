@@ -1,10 +1,9 @@
 import React from 'react';
 
 const Percentage = (props) => (
-  <div>
-    <h1>Percentage</h1>
-      <div className="percentage">
-      </div>
+  <div className="percentage">
+    <h3>{Math.round((props.rate/props.reviews_number)*20)}%</h3>
+    <span className="percentage-text">{props.text}</span>
   </div>
 );
 
