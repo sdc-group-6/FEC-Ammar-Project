@@ -4,5 +4,4 @@ import Reviews from './components/Reviews.jsx';
 
 var id = parseInt(prompt());
 
-
 ReactDOM.render(<Reviews restaurant_id={id}/>, document.getElementById('root'));
