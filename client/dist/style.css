@@ -1,0 +1,39 @@
+.review-main {
+    padding: 30px;
+}
+
+.percentage-list {
+    padding-top: 1px;
+    margin-top: 1px;
+    display: inline-flex;
+}
+
+.percentage {
+    padding: 10px;
+    max-width: 65px
+}
+
+.rating {
+    margin-top: 1px;
+    font-size: 13px;
+    color: gray;  
+}
+
+.percentage-text {
+    font-size: 13px;
+    color: gray;
+}
+
+.fa {
+    font-size: 15px;
+}
+  
+.checked {
+    color: gold;
+}
+
+.not-checked {
+    color: lightgray;
+}
+
+  
