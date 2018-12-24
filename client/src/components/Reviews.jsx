@@ -1,5 +1,6 @@
 import React from 'react';
 import Summary from './Summary.jsx';
+import ReviewsList from './ReviewsList.jsx';
 
 class Review extends React.Component {
   constructor(props) {
@@ -56,6 +57,7 @@ class Review extends React.Component {
       <div className="review-main">
        <Summary restaurant_name={this.state.restaurant_name} reviews_number={this.state.reviews_number} rating={this.state.rating} delivery_rating={this.state.delivery_rating} order_rating={this.state.order_rating}/>
        <hr></hr>
+       <ReviewsList reviews_number={this.state.reviews_number} reviews={this.state.reviews}/>
       </div>
     );
   }
