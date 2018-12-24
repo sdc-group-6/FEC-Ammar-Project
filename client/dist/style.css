@@ -44,3 +44,14 @@
 .reviews-list-header {
     float: right;
 }
+
+.reviews-list-footer {
+    text-align: center;
+}
+
+#link {
+    color: blue;
+    text-decoration: underline;
+    padding: 5px;
+    cursor: pointer;
+}
