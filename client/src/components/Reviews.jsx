@@ -1,5 +1,6 @@
 import React from 'react';
-import $ from 'jquery';
+import Summary from './Summary.jsx';
+import ReviewsList from './ReviewsList.jsx';
 
 class Review extends React.Component {
   constructor(props) {
@@ -54,12 +55,9 @@ class Review extends React.Component {
   render() {
     return (
       <div className="review-main">
-       <h2>Hello World</h2>
-       <h5>{this.state.restaurant_name}</h5>
-       <h5>{this.state.reviews_number}</h5>
-       <h5>{this.state.rating}</h5>
-       <h5>{this.state.delivery_rating}</h5>
-       <h5>{this.state.order_rating}</h5>
+       <Summary restaurant_name={this.state.restaurant_name} reviews_number={this.state.reviews_number} rating={this.state.rating} delivery_rating={this.state.delivery_rating} order_rating={this.state.order_rating}/>
+       <hr></hr>
+       <ReviewsList reviews_number={this.state.reviews_number} reviews={this.state.reviews}/>
       </div>
     );
   }
