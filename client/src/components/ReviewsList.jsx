@@ -25,12 +25,10 @@ class ReviewsList extends React.Component {
         ordered_reviews = this.props.reviews.sort( (a,b) => {
             return new Date(b.update_date) - new Date(a.update_date);
         });
-
       } else if (order === 'Highest rated') {
         ordered_reviews = this.props.reviews.sort( (a,b) => {
             return b.rating - a.rating;
         });
-
       }
 
       this.setState({
@@ -67,7 +65,7 @@ class ReviewsList extends React.Component {
         rendering_order: this.state.order,
         page_num: value
     });
-
+    
   }
 
   render() {

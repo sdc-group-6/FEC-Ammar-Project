@@ -3,7 +3,7 @@ import Stars from './Stars.jsx';
 import Percentage from './Percentage.jsx';
 
 const Summary = (props) => (
-  <div className="summary">
+  <div class="summary">
     <h3>Reviews for {props.restaurant_name}</h3>
     <Stars reviews_number={props.reviews_number * 3} rate={props.rating + props.delivery_rating + props.order_rating}/>
     <p className="rating">{props.reviews_number} ratings</p>
