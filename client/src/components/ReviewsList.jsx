@@ -16,20 +16,6 @@ class ReviewsList extends React.Component {
     this.changeReviewsPage = this.changeReviewsPage.bind(this);
   }
 
-  componentDidMount() {
-      let ordered_reviews = this.props.reviews.sort( (a,b) => {
-          return new Date(b.update_date) - new Date(a.update_date);
-        });
-        
-        this.setState({
-            ordered_reviews: ordered_reviews,
-            rendering_order: 'Most recent',
-            page_num: 1
-        });
-
-  }
-
-
   changeReviewsOrder(event) {
       // sort reviews according to selected order
       let order = event.target.value;
@@ -55,14 +41,31 @@ class ReviewsList extends React.Component {
   }
 
   changeReviewsPage(event) {
-      let page_num = event.target.value;
-      // if page number is less than 1 keep it 1
-      // if page number is more than (reviews_number / 10) keep it on that number
+
+      let value = parseInt(event.target.className);
+      if (value === -1) {
+        // user clicked prev if page number is less than 1 keep it 1
+        if (this.state.page_num > 1) {
+            value = this.state.page_num - 1;
+        } else {
+            // user on the first page cant go prev
+            return;
+        }
+      } else if (value === 0) {
+        // user clicked next if page number is more
+        //  than (reviews_number / 10) keep it on that number
+        if (this.state.page_num < (this.props.reviews_number / 10)) {
+            value = this.state.page_num + 1;
+        } else {
+            // user on the last page cant go next
+            return;
+        }
+      }
 
       this.setState({
         ordered_reviews: this.state.ordered_reviews,
         rendering_order: this.state.order,
-        page_num: page_num
+        page_num: value
     });
 
   }
