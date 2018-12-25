@@ -18,7 +18,8 @@ const ReviewsListEntity = (props) => {
         </div >
         <div className="reviews-num" style={style.reviewsNum}>
           <span className="fa fa-star checked" style={style.blueStar}></span>
-           1 review
+           {props.num_of_reviews[props.review.user_name]} 
+           {props.num_of_reviews[props.review.user_name] < 2 ? ' review' : ' reviews'}
         </div>
       </div>
     </div>
