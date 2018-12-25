@@ -55,6 +55,49 @@ const link = {
   cursor: 'pointer',
 };
 
+const reviewsListEntity = {
+  padding: '15px',
+};
+
+const reviewDate = {
+  color: 'gray',
+  float: 'right',
+  fontSize: '12px',
+};
+
+const reviewUser = {
+  display: 'table',
+  alignItems: 'center',
+  padding: '10px',
+};
+
+const circle = {
+  color: 'white',
+  backgroundColor: '#40c2de',
+  width: '40px',
+  height: '40px',
+  borderRadius: '40px',
+  textAlign: 'center',
+  fontSize: '20px',
+  verticalAlign: 'middle',
+  display: 'table-cell',
+};
+
+const userName = {
+  fontWeight: 'bold',
+  paddingLeft: '5px',
+};
+
+const reviewsNum = {
+  paddingLeft: '5px',
+  fontSize: '13px',
+};
+
+const blueStar = {
+  color: '#40c2de',
+  paddingRight: '5px',
+};
+
 export default {
   reviewMain,
   percentageList,
@@ -68,4 +111,11 @@ export default {
   reviewsListHeader,
   reviewsListFooter,
   link,
+  reviewsListEntity,
+  reviewDate,
+  reviewUser,
+  circle,
+  userName,
+  reviewsNum,
+  blueStar,
 };

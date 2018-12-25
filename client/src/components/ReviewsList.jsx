@@ -85,7 +85,7 @@ class ReviewsList extends React.Component {
             {
                 /* display 10 reviews using the page_num attribute in the state as a referance */
                 this.props.reviews.slice(this.state.page_num * 10 - 10, this.state.page_num * 10).map(review => (
-                     <ReviewsListEntity review={review} key={review.id}/>
+                     <ReviewsListEntity review={review} key={review.id} num_of_reviews={this.props.num_of_reviews}/>
                      ))
             }
         </div>
