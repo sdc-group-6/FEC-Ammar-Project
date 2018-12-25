@@ -72,7 +72,7 @@ const reviewUser = {
 };
 
 const circle = {
-  color:'white',
+  color: 'white',
   backgroundColor: '#40c2de',
   width: '40px',
   height: '40px',
