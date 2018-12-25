@@ -66,7 +66,7 @@ const reviewDate = {
 };
 
 const reviewUser = {
-  display: 'inline-flex',
+  display: 'table',
   alignItems: 'center',
   padding: '10px',
 };
@@ -79,6 +79,8 @@ const circle = {
   borderRadius: '40px',
   textAlign: 'center',
   fontSize: '20px',
+  verticalAlign: 'middle',
+  display: 'table-cell',
 };
 
 const userName = {
