@@ -1,6 +1,7 @@
 import React from 'react';
 import ReviewsListEntity from './ReviewsListEntity.jsx';
 import ReviewsPages from './ReviewsPages.jsx';
+import style from '../style/style.css.jsx';
 
 class ReviewsList extends React.Component {
   constructor(props) {
@@ -71,9 +72,9 @@ class ReviewsList extends React.Component {
   render() {
     return (
       <div className="review-list">
-        <div className="reviews-list-header">
+        <div className="reviews-list-header" style={style.reviewsListHeader}>
             <span>Sort by: </span>
-            <select className="reviews-list-sorting" onChange={this.changeReviewsOrder}>
+            <select className="reviews-list-sorting" style={style.reviewsListSorting} onChange={this.changeReviewsOrder}>
                 <option value='Most recent'>Most recent</option>
                 <option value='Highest rated'>Highest rated</option>
             </select>
