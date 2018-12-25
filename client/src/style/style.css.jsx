@@ -55,6 +55,16 @@ const link = {
   cursor: 'pointer',
 };
 
+const reviewsListEntity = {
+  padding: '15px',
+};
+
+const reviewDate = {
+  color: 'gray',
+  float: 'right',
+  fontSize: '12px',
+};
+
 export default {
   reviewMain,
   percentageList,
@@ -68,4 +78,6 @@ export default {
   reviewsListHeader,
   reviewsListFooter,
   link,
+  reviewsListEntity,
+  reviewDate,
 };
