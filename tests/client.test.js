@@ -26,10 +26,6 @@ describe('test', () => {
     wrapper = shallow(<ReviewsList reviews_number={sampleData.length} reviews={sampleData} num_of_reviews={emptyObj} />);
   });
 
-  it('renders without crashing', () => {
-    wrapper = shallow(<ReviewsList reviews_number={sampleData.length} reviews={sampleData} num_of_reviews={emptyObj} />);
-  });
-
   it('ReviewsList component is exist', () => {
     expect(wrapper).toHaveLength(1);  
   });
