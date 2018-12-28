@@ -1,5 +1,10 @@
+const path = require('path');
+
 const reviewMain = {
   padding: '30px',
+  font: '15px sans-serif',
+  fontWeight: 400,
+  lineHeight: 1.45,
 };
 
 const percentageList = {
@@ -37,11 +42,21 @@ const notChecked = {
 };
 
 const reviewsListSorting = {
-  fontSize: '17px',
+  padding: '4px 32px 4px 12px',
+  fontSize: '14px',
+  backgroundColor: '#fff',
+  color: 'rgba(0,0,0,.87)',
+  border: '2px solid rgba(0,0,0,.2)',
+  WebkitAppearance: 'none', /* Removes default chrome and safari style */
+  MozAppearance: 'none', /* Removes default style Firefox */
+  background: `url(${path.join(__dirname, './downArrow.png')}) `,
+  backgroundPosition: '100% 50%',
+  backgroundRepeat: 'no-repeat',
 };
 
 const reviewsListHeader = {
   float: 'right',
+  color: 'gray',
 };
 
 const reviewsListFooter = {
@@ -90,7 +105,7 @@ const userName = {
 
 const reviewsNum = {
   paddingLeft: '5px',
-  fontSize: '13px',
+  fontSize: '14px',
 };
 
 const blueStar = {
