@@ -29,18 +29,6 @@ const percentageText = {
   color: 'gray',
 };
 
-const fa = {
-  fontSize: '15px',
-};
-
-const checked = {
-  color: 'gold',
-};
-
-const notChecked = {
-  color: 'lightgray',
-};
-
 const reviewsListSorting = {
   padding: '4px 32px 4px 12px',
   fontSize: '14px',
@@ -96,6 +84,7 @@ const circle = {
   fontSize: '20px',
   verticalAlign: 'middle',
   display: 'table-cell',
+  padding: '5px',
 };
 
 const userName = {
@@ -108,8 +97,21 @@ const reviewsNum = {
   fontSize: '14px',
 };
 
-const blueStar = {
-  color: '#40c2de',
+const stars = {
+  padding: '0px',
+  display: 'inline-flex',
+};
+
+const star = {
+  backgroundSize: '22px 22px',
+  height: '22px',
+  width: '22px',
+};
+
+const icon = {
+  backgroundSize: '22px 22px',
+  height: '22px',
+  width: '22px',
   paddingRight: '5px',
 };
 
@@ -119,9 +121,8 @@ export default {
   percentage,
   rating,
   percentageText,
-  fa,
-  checked,
-  notChecked,
+  stars,
+  star,
   reviewsListSorting,
   reviewsListHeader,
   reviewsListFooter,
@@ -132,5 +133,5 @@ export default {
   circle,
   userName,
   reviewsNum,
-  blueStar,
+  icon,
 };
