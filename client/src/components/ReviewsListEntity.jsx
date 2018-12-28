@@ -1,5 +1,7 @@
 import React from 'react';
 import Stars from './Stars.jsx';
+import Cup from '../style/Cup.svg';
+import BlueStar from '../style/BlueStar.svg';
 import style from '../style/style.css.jsx';
 
 const ReviewsListEntity = (props) => {
@@ -17,14 +19,23 @@ const ReviewsListEntity = (props) => {
           {props.review.user_name}
         </div >
         <div className="reviews-num" style={style.reviewsNum}>
-          <span className="fa fa-star checked" style={style.blueStar}></span>
-           {props.num_of_reviews[props.review.user_name]} 
-           {props.num_of_reviews[props.review.user_name] < 2 ? ' review' : ' reviews'}
+        {
+          props.num_of_reviews[props.review.user_name] > 4 ? 
+          <span>
+            <span><Cup style={style.icon}/></span>
+            <span>Top reviewer</span>
+          </span> : 
+          <span>
+            <span><BlueStar style={style.icon}/></span>
+            <span>{props.num_of_reviews[props.review.user_name]}</span>
+            <span>{props.num_of_reviews[props.review.user_name] < 2 ? ' review' : ' reviews'}</span>
+          </span>
+        }
         </div>
       </div>
     </div>
     <Stars reviews_number={1} rate={props.review.rating}/>
-    {props.review.content}
+    <div>{props.review.content}</div>
   </div>
   );
 };
