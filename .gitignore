@@ -2,3 +2,4 @@ node_modules/
 Documentation/
 example/
 public/
+client/dist/bundle.js
