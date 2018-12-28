@@ -18,8 +18,8 @@ for (let i = 0; i < 100; i++) {
   db.query(`INSERT INTO restaurants (name,address,phone) VALUES ("${restaurantName}","${restaurantAddress}","${restaurantPhone}");`);
 }
 
-// generate 100 fake reviews for the first 10 restaurants
-for (let i = 0; i < 3000; i++) {
+// generate 2000 fake reviews for the first 10 restaurants
+for (let i = 0; i < 2000; i++) {
   const userId = faker.random.number({'min': 1,'max': 100});
   const restaurantId = faker.random.number({'min': 1,'max': 10});
   const content = faker.lorem.sentences();
