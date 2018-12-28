@@ -3,30 +3,30 @@ const db = require('../database');
 
 // // generate 100 fake user
 for (let i = 0; i < 100; i++) {
-  let user_name = faker.internet.userName();
-  let user_email = faker.internet.email();
-  let user_password = faker.internet.password();
-  db.query(`INSERT INTO users (name,email,password) VALUES ("${user_name}","${user_email}","${user_password}");`);
+  const userName = faker.internet.userName();
+  const userEmail = faker.internet.email();
+  const userPassword = faker.internet.password();
+  db.query(`INSERT INTO users (name,email,password) VALUES ("${userName}","${userEmail}","${userPassword}");`);
 }
 
 
 // // generate 100 fake restaurants
 for (let i = 0; i < 100; i++) {
-  let restaurant_name = faker.company.companyName();
-  let restaurant_address = faker.address.streetAddress();
-  let restaurant_phone = faker.phone.phoneNumber();
-  db.query(`INSERT INTO restaurants (name,address,phone) VALUES ("${restaurant_name}","${restaurant_address}","${restaurant_phone}");`);
+  const restaurantName = faker.company.companyName();
+  const restaurantAddress = faker.address.streetAddress();
+  const restaurantPhone = faker.phone.phoneNumber();
+  db.query(`INSERT INTO restaurants (name,address,phone) VALUES ("${restaurantName}","${restaurantAddress}","${restaurantPhone}");`);
 }
 
-// generate 100 fake reviews for the first 10 restaurants
-for (let i = 0; i < 100; i++) {
-  let user_id = faker.random.number({'min': 1,'max': 100});
-  let restaurant_id = faker.random.number({'min': 1,'max': 10});
-  let content = faker.lorem.sentences();
-  let rating = faker.random.number({'min': 1,'max': 5});
-  let delivery_rating = faker.random.number({'min': 1,'max': 5});
-  let order_rating = faker.random.number({'min': 1,'max': 5});
-  let update_date = faker.date.between('2018-01-01', '2019-01-01');
-  update_date = update_date.toLocaleDateString('en-US');
-  db.query(`INSERT INTO reviews (user_id,restaurant_id,content,rating,delivery_rating,order_rating,update_date) VALUES (${user_id},${restaurant_id},"${content}",${rating},${delivery_rating},${order_rating},STR_TO_DATE("${update_date}","%m/%d/%Y"));`);
+// generate 2000 fake reviews for the first 10 restaurants
+for (let i = 0; i < 2000; i++) {
+  const userId = faker.random.number({'min': 1,'max': 100});
+  const restaurantId = faker.random.number({'min': 1,'max': 10});
+  const content = faker.lorem.sentences();
+  const rating = faker.random.number({'min': 1,'max': 5});
+  const deliveryRating = faker.random.number({'min': 1,'max': 5});
+  const orderRating = faker.random.number({'min': 1,'max': 5});
+  let updateDate = faker.date.between('2018-01-01', '2019-01-01');
+  updateDate = updateDate.toLocaleDateString('en-US');
+  db.query(`INSERT INTO reviews (user_id,restaurant_id,content,rating,delivery_rating,order_rating,update_date) VALUES (${userId},${restaurantId},"${content}",${rating},${deliveryRating},${orderRating},STR_TO_DATE("${updateDate}","%m/%d/%Y"));`);
 }
