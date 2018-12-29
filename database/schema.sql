@@ -22,7 +22,7 @@ CREATE TABLE restaurants (
   name VARCHAR(50) NOT NULL,
   address VARCHAR(50) NOT NULL,
   phone VARCHAR(50),
-  menu TEXT,
+  menu JSON,
   PRIMARY KEY (id)
 );
 
