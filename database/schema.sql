@@ -31,7 +31,7 @@ CREATE TABLE reviews (
   user_id INTEGER NOT NULL,
   restaurant_id INTEGER NOT NULL,
   content TEXT,
-  order_items TEXT,
+  order_items JSON,
   rating INTEGER,
   delivery_rating INTEGER,
   order_rating INTEGER,
