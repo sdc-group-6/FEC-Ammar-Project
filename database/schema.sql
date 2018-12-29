@@ -22,6 +22,7 @@ CREATE TABLE restaurants (
   name VARCHAR(50) NOT NULL,
   address VARCHAR(50) NOT NULL,
   phone VARCHAR(50),
+  menu TEXT,
   PRIMARY KEY (id)
 );
 
@@ -30,6 +31,7 @@ CREATE TABLE reviews (
   user_id INTEGER NOT NULL,
   restaurant_id INTEGER NOT NULL,
   content TEXT,
+  order_items TEXT,
   rating INTEGER,
   delivery_rating INTEGER,
   order_rating INTEGER,
