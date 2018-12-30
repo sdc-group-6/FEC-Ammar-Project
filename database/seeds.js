@@ -3,7 +3,7 @@ const db = require('../database');
 
 const menu = [
   [1, 'bread', 4.5, ''],
-  [2, 'soup', 1.5, 'cheicken, pease, carrot, onion'],
+  [2, 'soup', 1.5, 'chicken, peas, carrot, onion'],
   [3, 'california roll', 12, 'Masago, crabmeat, cucumber and avocado'],
   [4, 'B.L.T. Sandwich', 9.75, 'Bacon, lettuce and tomatoes'],
   [5, 'Veggie Burger', 8, 'Served on a toasted bun with coleslaw and pickles'],
