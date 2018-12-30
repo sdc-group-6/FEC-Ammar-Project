@@ -1,4 +1,5 @@
 import React from 'react';
+import OrderList from './OrderList.jsx';
 import Stars from './Stars.jsx';
 import Cup from '../style/Cup.svg';
 import BlueStar from '../style/BlueStar.svg';
@@ -36,6 +37,7 @@ const ReviewsListEntity = (props) => {
     </div>
     <Stars reviews_number={1} rate={props.review.rating}/>
     <div>{props.review.content}</div>
+    <OrderList order_items={props.review.order_items} menu={props.review.menu}/>
   </div>
   );
 };
