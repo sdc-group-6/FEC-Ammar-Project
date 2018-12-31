@@ -19,14 +19,12 @@ class OrderListEntity extends React.Component {
         this.setState({
             visiable: true
         });
-
     }
 
     onMouseLeave() {
         this.setState({
             visiable: false
         });
-
     }
     
     render() {
