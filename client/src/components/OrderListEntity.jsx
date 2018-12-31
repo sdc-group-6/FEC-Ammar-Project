@@ -6,7 +6,7 @@ class OrderListEntity extends React.Component {
       super(props);
   
       this.state = {
-        visiable: false,
+        visible: false,
       };
     }
 
@@ -17,13 +17,13 @@ class OrderListEntity extends React.Component {
 
     onMouseEnter() {
         this.setState({
-            visiable: true
+            visible: true
         });
     }
 
     onMouseLeave() {
         this.setState({
-            visiable: false
+            visible: false
         });
     }
     
@@ -32,7 +32,7 @@ class OrderListEntity extends React.Component {
         <div className="order-list-entity" style={style.orderListEntity} onMouseEnter={this.onMouseEnter.bind(this)} onMouseLeave={this.onMouseLeave.bind(this)}>
             {this.props.item['name'] + ' + '}
             {
-                this.state.visiable
+                this.state.visible
                 ?  <form className="tooltiptext" style={style.tooltiptext}>
                      <div style={style.tooltiptextHeader}><span style={style.userName}>{this.props.item['name']}</span><span>${this.props.item['price']}</span></div>
                      {
