@@ -38,14 +38,22 @@ const OrderList = (props) => {
     const items = sanitizeOrderItems(props);
     const menu = sanitizeMenu(props.menu);
   return (
-  <div className="order-list" style={style.orderList}>
+  <div>
     {
         items.length === 0 ?
         ''
         :
-        items.map( item => (
-        <OrderListEntity key={item} item={menu[item]} value={item}/>
-        ))}
+        <div>
+            <div className="user-ordered" style={style.userOrdered}>
+                {props.user_name + ' ordered:'}
+            </div>
+            <div className="order-list" style={style.orderList}>
+                {items.map( item => (
+                    <OrderListEntity key={item} item={menu[item]} value={item}/>
+                ))}
+            </div>
+        </div>
+    }
   </div>
   );
 };
