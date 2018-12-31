@@ -2,7 +2,7 @@ import React from 'react';
 import OrderListEntity from './OrderListEntity.jsx';
 import style from '../style/style.css.jsx';
 
-function sanitizeOrderItems(props) {
+function parseOrderItems(props) {
     if (props.order_items.slice(2,props.order_items.length-2).split('').length === 0) {
         return [];
     } else {
@@ -10,7 +10,7 @@ function sanitizeOrderItems(props) {
     }
 } 
 
-function sanitizeMenu(str) {
+function parseMenu(str) {
     let result = {};
     const menu = str.slice(2,str.length-2).split(',');
     // console.log(menu);
@@ -35,8 +35,8 @@ function sanitizeMenu(str) {
 }
 
 const OrderList = (props) => {
-    const items = sanitizeOrderItems(props);
-    const menu = sanitizeMenu(props.menu);
+    const items = parseOrderItems(props);
+    const menu = parseMenu(props.menu);
   return (
   <div>
     {
