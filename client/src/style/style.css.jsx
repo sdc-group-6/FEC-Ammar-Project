@@ -123,11 +123,42 @@ const orderList = {
 };
 
 const orderListEntity = {
-  display: 'box',
   cursor: 'pointer',
   marginRight: '10px',
   padding: '8px',
   backgroundColor: 'rgb(235, 235, 235)',
+};
+
+const tooltiptext = {
+  display: 'flex',
+  flexDirection: 'column',
+  justifyContent: 'space-between',
+  background: 'white',
+  border: '1px solid black',
+  width: '400px',
+  height: '120px',
+  padding: '10px 0px 0px 0px',
+  position: 'absolute', /* Position the tooltip */
+  zIndex: 1,
+};
+
+const tooltiptextHeader = {
+  display: 'flex',
+  justifyContent: 'space-between',
+  alignItems: 'flex-end',
+  padding: '5px 10px 0px 10px',
+};
+
+const tooltiptextContent = {
+  padding: '10px 10px 0px 10px',
+};
+
+const addToBag = {
+  color: 'white',
+  backgroundColor: '#0070eb',
+  height: '50px',
+  textAlign: 'center',
+  fontSize: '16px',
 };
 
 export default {
@@ -152,4 +183,8 @@ export default {
   userOrdered,
   orderList,
   orderListEntity,
+  tooltiptext,
+  tooltiptextHeader,
+  tooltiptextContent,
+  addToBag,
 };
