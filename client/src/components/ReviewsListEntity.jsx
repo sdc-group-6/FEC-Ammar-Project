@@ -37,7 +37,7 @@ const ReviewsListEntity = (props) => {
     </div>
     <Stars reviews_number={1} rate={props.review.rating}/>
     <div>{props.review.content}</div>
-    <OrderList order_items={props.review.order_items} menu={props.review.menu}/>
+    <OrderList user_name={props.review.user_name} order_items={props.review.order_items} menu={props.review.menu}/>
   </div>
   );
 };
