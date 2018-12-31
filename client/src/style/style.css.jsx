@@ -55,7 +55,7 @@ const link = {
 };
 
 const reviewsListEntity = {
-  padding: '15px',
+  padding: '20px 0px 20px 0px',
 };
 
 const reviewDate = {
@@ -111,6 +111,56 @@ const icon = {
   paddingRight: '5px',
 };
 
+const userOrdered = {
+  padding: '10px 5px 0px 5px',
+  color: 'gray',
+  fontSize: '14px',
+};
+
+const orderList = {
+  display: 'inline-flex',
+  marginTop: '8px',
+};
+
+const orderListEntity = {
+  cursor: 'pointer',
+  marginRight: '10px',
+  padding: '8px',
+  backgroundColor: 'rgb(235, 235, 235)',
+};
+
+const tooltiptext = {
+  display: 'flex',
+  flexDirection: 'column',
+  justifyContent: 'space-between',
+  background: 'white',
+  border: '1px solid black',
+  width: '400px',
+  height: '120px',
+  padding: '10px 0px 0px 0px',
+  position: 'absolute', /* Position the tooltip */
+  zIndex: 1,
+};
+
+const tooltiptextHeader = {
+  display: 'flex',
+  justifyContent: 'space-between',
+  alignItems: 'flex-end',
+  padding: '5px 10px 0px 10px',
+};
+
+const tooltiptextContent = {
+  padding: '10px 10px 0px 10px',
+};
+
+const addToBag = {
+  color: 'white',
+  backgroundColor: '#0070eb',
+  height: '50px',
+  textAlign: 'center',
+  fontSize: '16px',
+};
+
 export default {
   reviewMain,
   percentageList,
@@ -130,4 +180,11 @@ export default {
   userName,
   reviewsNum,
   icon,
+  userOrdered,
+  orderList,
+  orderListEntity,
+  tooltiptext,
+  tooltiptextHeader,
+  tooltiptextContent,
+  addToBag,
 };
