@@ -55,7 +55,7 @@ const link = {
 };
 
 const reviewsListEntity = {
-  padding: '15px',
+  padding: '20px 0px 20px 0px',
 };
 
 const reviewDate = {
@@ -111,6 +111,25 @@ const icon = {
   paddingRight: '5px',
 };
 
+const userOrdered = {
+  padding: '10px 5px 0px 5px',
+  color: 'gray',
+  fontSize: '14px',
+};
+
+const orderList = {
+  display: 'inline-flex',
+  marginTop: '8px',
+};
+
+const orderListEntity = {
+  display: 'box',
+  cursor: 'pointer',
+  marginRight: '10px',
+  padding: '8px',
+  backgroundColor: 'rgb(235, 235, 235)',
+};
+
 export default {
   reviewMain,
   percentageList,
@@ -130,4 +149,7 @@ export default {
   userName,
   reviewsNum,
   icon,
+  userOrdered,
+  orderList,
+  orderListEntity,
 };
