@@ -40,10 +40,9 @@ const OrderList = (props) => {
   return (
   <div>
     {
-        items.length === 0 ?
-        ''
-        :
-        <div>
+        items.length === 0
+        ? ''
+        :  <div>
             <div className="user-ordered" style={style.userOrdered}>
                 {props.user_name + ' ordered:'}
             </div>
@@ -52,7 +51,7 @@ const OrderList = (props) => {
                     <OrderListEntity key={item} item={menu[item]} value={item}/>
                 ))}
             </div>
-        </div>
+          </div>
     }
   </div>
   );
