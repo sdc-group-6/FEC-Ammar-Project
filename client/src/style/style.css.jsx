@@ -135,12 +135,16 @@ const tooltiptext = {
   display: 'flex',
   flexDirection: 'column',
   justifyContent: 'space-between',
-  background: 'white',
-  border: '1px solid black',
+  background: '#fff',
+  border: '1px solid rgba(0,0,0,.1)',
+  boxShadow: '0 3px 9px rgba(0,0,0,.5)',
+  borderRadius: '3px',
   width: '400px',
   height: '120px',
   padding: '10px 0px 0px 0px',
   position: 'absolute', /* Position the tooltip */
+  transform: 'translateY(10px) translateX(-8px)',
+  transition: '.25s ease-out',
   zIndex: 1,
 };
 
