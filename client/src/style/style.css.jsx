@@ -39,6 +39,7 @@ const reviewsListSorting = {
 };
 
 const reviewsListHeader = {
+  padding: '6px',
   float: 'right',
   color: 'gray',
 };
@@ -85,11 +86,11 @@ const circle = {
 
 const userName = {
   fontWeight: 'bold',
-  paddingLeft: '5px',
+  paddingLeft: '10px',
 };
 
 const reviewsNum = {
-  paddingLeft: '5px',
+  paddingLeft: '10px',
   fontSize: '14px',
   fontWeight: 'light',
 };
@@ -106,8 +107,9 @@ const star = {
 };
 
 const icon = {
-  height: '21px',
-  width: '21px',
+  height: '20px',
+  width: '20px',
+  lineHeight: '1.45',
   paddingRight: '5px',
 };
 
