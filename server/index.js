@@ -4,13 +4,17 @@ const path = require('path');
 const db = require('../database/db_modules');
 
 const app = express();
-const PORT = 3000;
+const PORT = 3004;
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, '../client/dist')));
 
-app.get('/reviews', (req, res) => {
+app.get('/restaurants/:id', (req, res) => {
+  res.status(200).sendFile(path.join(__dirname, '../client/dist/index.html'));
+});
+
+app.get('/restaurants', (req, res) => {
   // on reviews router get all reviews from the database
   db.getAllReviews((err, data) => {
     if (err) {
@@ -21,7 +25,7 @@ app.get('/reviews', (req, res) => {
   });
 });
 
-app.get('/reviews/:id', (req, res) => {
+app.get('/restaurants/:id/reviews', (req, res) => {
   // on reviews router get all reviews from the database
   db.getReviewsByRestaurantId(req.params.id, (err, data) => {
     if (err) {
