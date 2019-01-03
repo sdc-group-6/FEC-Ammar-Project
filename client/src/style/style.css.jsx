@@ -1,5 +1,3 @@
-const path = require('path');
-
 const reviewMain = {
   padding: '30px',
   font: '16px Arial',
@@ -26,16 +24,23 @@ const percentageText = {
 };
 
 const reviewsListSorting = {
-  padding: '6px 32px 6px 12px',
+  padding: '8px 32px 8px 12px',
   fontSize: '16px',
   backgroundColor: '#fff',
   color: 'rgba(0,0,0,.87)',
   border: '2px solid rgba(0,0,0,.2)',
   WebkitAppearance: 'none', /* Removes default chrome and safari style */
   MozAppearance: 'none', /* Removes default style Firefox */
-  background: `url(${path.join(__dirname, './downArrow.png')}) `,
   backgroundPosition: '100% 50%',
   backgroundRepeat: 'no-repeat',
+};
+
+const downArrow = {
+  height: '25px',
+  width: '25px',
+  position: 'relative',
+  left: '-35px',
+  top: '7px',
 };
 
 const reviewsListHeader = {
@@ -176,6 +181,7 @@ export default {
   stars,
   star,
   reviewsListSorting,
+  downArrow,
   reviewsListHeader,
   reviewsListFooter,
   link,
