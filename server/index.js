@@ -14,7 +14,7 @@ app.get('/restaurants/:id', (req, res) => {
   res.status(200).sendFile(path.join(__dirname, '../client/dist/index.html'));
 });
 
-app.get('/restaurants/reviews', (req, res) => {
+app.get('/reviews', (req, res) => {
   // on reviews router get all reviews from the database
   db.getAllReviews((err, data) => {
     if (err) {
