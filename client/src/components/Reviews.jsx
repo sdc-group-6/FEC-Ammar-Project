@@ -21,7 +21,9 @@ class Review extends React.Component {
 
   componentDidMount() {
 
-    fetch(`reviews/${this.props.restaurant_id}`)
+    const id = window.location.pathname.substring(13);
+
+    fetch(`${id}/reviews`)
     .then(response => response.json())
     .then(data => {
 
