@@ -2,6 +2,7 @@ import React from 'react';
 import ReviewsListEntity from './ReviewsListEntity.jsx';
 import ReviewsPages from './ReviewsPages.jsx';
 import style from '../style/style.css.jsx';
+import DownArrow from '../style/DownArrow.svg';
 
 class ReviewsList extends React.Component {
   constructor(props) {
@@ -78,6 +79,7 @@ class ReviewsList extends React.Component {
                 <option value='Most recent'>Most recent</option>
                 <option value='Highest rated'>Highest rated</option>
             </select>
+            <DownArrow style={style.downArrow}/>
         </div>
         <br></br>
         <br></br>
