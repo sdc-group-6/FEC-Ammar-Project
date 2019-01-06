@@ -55,4 +55,4 @@ function seedDB() {
   console.log('Successfully seeded the database');
 }
 
-seedDB();
+module.exports = { seedDB };

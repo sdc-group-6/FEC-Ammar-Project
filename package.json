@@ -8,10 +8,10 @@
     "node": ">=6.13.0"
   },
   "scripts": {
-    "start": "nodemon server/index.js",
+    "start": "node server/index.js",
     "react-dev": "webpack -d --watch",
-    "create-db": "mysql -u root -p <schema.sql",
-    "seed-db": "node ./database/seeds.js",
+    "create-db": "mysql -u root <schema.sql",
+    "seed-db": "node database/seeds.js",
     "test": "jest"
   },
   "dependencies": {
