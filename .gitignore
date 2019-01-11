@@ -3,4 +3,4 @@ Documentation/
 example/
 public/
 client/dist/bundle.js
-./postgres-seeding/data.csv
+./postgres-seeding/data/

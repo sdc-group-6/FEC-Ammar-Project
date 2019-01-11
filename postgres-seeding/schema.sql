@@ -1,16 +1,21 @@
 CREATE TABLE reviews (
-  id serial,
+  id BIGSERIAL,
   user_name VARCHAR(50) NOT NULL,
-  restaurant_name VARCHAR(50) NOT NULL,
+  restaurant_id INTEGER NOT NULL,
   content TEXT,
-  order_items JSON,
+  order_items TEXT,
   rating INTEGER,
   delivery_rating INTEGER,
   order_rating INTEGER,
   update_date DATE NOT NULL,
-  PRIMARY KEY (id),
-  FOREIGN KEY (user_id) REFERENCES users(id),
-  FOREIGN KEY (restaurant_id) REFERENCES restaurants(id)
+  FOREIGN KEY (restaurant_id) REFERENCES restaurants(id),
+  PRIMARY KEY (id)
+);
+
+CREATE TABLE restaurants (
+  id BIGSERIAL,
+  name VARCHAR(50) NOT NULL,
+  PRIMARY KEY (id)
 );
 
 
