@@ -41,8 +41,11 @@ npm install
 
 ## CRUD Operations
 
+### Postgresql
+
 CREATE
 
+```sh
 app.post('/reviews:restaurant_id', (req, res) => {
   var query = `INSERT INTO reviews (user_name, restaurant_id, content, order_itmes, rating, delivery_rating, order_rating, update_data) 
   VALUES (${user_name}, ${req.params.restaurant_id}, ${content}, ${order_items}, ${rating}, ${deilvery_rating}, ${order_rating}, ${update_date})`;
@@ -54,3 +57,49 @@ app.post('/reviews:restaurant_id', (req, res) => {
     console.log('Error', err);
   }
 )
+```
+
+RETRIEVE
+
+```sh
+app.get('/reviews:restaurant_id', (req, res) => {
+  var query = `SELECT FROM * reviews WHERE restaurant_id=${req.params.restaurant_id}`;
+  db.one(query)
+  .then((data) => {
+    res.send(data);
+  })
+  .catch((err) => {
+    console.log('Error', err);
+  })
+});
+```
+
+UPDATE
+
+```sh
+app.put('/reviews:restaurant_id', (req, res) => {
+  var query = `UPDATE reviews SET content = ${updated_content} WHERE restaurant_id=${req.params.restaurant_id}`;
+  db.one(query)
+  .then((data) => {
+    console.log('Insert Complete');
+  })
+  .catch((err) => {
+    console.log('Error', err);
+  })
+});
+```
+
+DELETE
+
+```sh
+app.delete('/reviews:restaurant_id', (req, res) => {
+  var query = `DELETE FROM reviews WHERE restaurant_id=${req.params.restaurant_id}`;
+  db.one(query)
+  .then((data) => {
+    console.log('Delete Complete');
+  })
+  .catch((err) => {
+    console.log('Error', err);
+  });
+});
+```
