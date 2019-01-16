@@ -8,7 +8,7 @@
     "node": ">=6.13.0"
   },
   "scripts": {
-    "start": "node server/index.js",
+    "start": "nodemon server/index.js",
     "react-dev": "webpack -d --watch",
     "create-db": "mysql -u root <schema.sql",
     "seed-db": "node database/seeds.js",
@@ -19,6 +19,7 @@
     "express": "^4.15.4",
     "jquery": "^3.2.1",
     "mysql": "^2.14.1",
+    "pg-promise": "^8.5.4",
     "react": "^16.7.0",
     "react-dom": "^16.7.0"
   },

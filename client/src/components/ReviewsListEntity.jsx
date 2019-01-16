@@ -6,6 +6,15 @@ import BlueStar from '../style/BlueStar.svg';
 import style from '../style/style.css.jsx';
 
 const ReviewsListEntity = (props) => {
+  const menu = [
+    {name: 'bread', price: 4.5, content:'Just bread'},
+    {name: 'california roll', price: 12, content:'Masago, crabmeat, cucumber and avocado'},
+    {name: 'B.L.T. Sandwich', price: 9.75, content:'Bacon, lettuce and tomatoes'},
+    {name: 'Veggie Burger', price: 8, content:'Served on a toasted bun with coleslaw and pickles'},
+    {name: 'Baby Back Ribs', price: 15, content:'Full rack of ribs'},
+    {name: 'Clam Chowder', price: 6.75, content:'Straight from New England'}
+  ];
+
   return (
   <div className="reviews-list-entity" style={style.reviewsListEntity}>
     <div className="review-date" style={style.reviewDate}>
@@ -37,7 +46,7 @@ const ReviewsListEntity = (props) => {
     </div>
     <Stars reviews_number={1} rate={props.review.rating}/>
     <div>{props.review.content}</div>
-    <OrderList user_name={props.review.user_name} order_items={props.review.order_items} menu={props.review.menu}/>
+    <OrderList user_name={props.review.user_name} order_items={props.review.order_items} menu={menu}/>
   </div>
   );
 };

@@ -3,6 +3,7 @@ const bodyParser = require('body-parser');
 const path = require('path');
 const db = require('../database/db_modules');
 const { seedDB } = require('../database/seeds');
+const Postgres = require('../routes/postgresRoutes.js');
 
 const app = express();
 const PORT = 3004;
@@ -28,13 +29,16 @@ app.get('/reviews', (req, res) => {
 
 app.get('/restaurants/:id/reviews', (req, res) => {
   // on reviews router get all reviews from the database
-  db.getReviewsByRestaurantId(req.params.id, (err, data) => {
-    if (err) {
-      res.status(501).send(err);
-    } else {
-      res.status(200).send(data);
-    }
-  });
+  // db.getReviewsByRestaurantId(req.params.id, (err, data) => {
+  //   if (err) {
+  //     res.status(501).send(err);
+  //   } else {
+  //     res.status(200).send(data);
+  //   }
+  // });
+  console.log('get request');
+  Postgres.getReviews(req, res, req.params.id);
+
 });
 
 app.get('/reviews/seed', (req, res) => {
