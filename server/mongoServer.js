@@ -3,10 +3,10 @@ const bodyParser = require('body-parser');
 const path = require('path');
 const db = require('../database/db_modules');
 const { seedDB } = require('../database/seeds');
-const Postgres = require('../routes/postgresRoutes.js');
+const Mongo = require('../routes/mongoRoutes.js');
 
 const app = express();
-const PORT = 3004;
+const PORT = 3005;
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -28,12 +28,12 @@ app.get('/reviews', (req, res) => {
 });
 
 app.get('/restaurants/:id/reviews', (req, res) => {
-  Postgres.getReviews(req, res, req.params.id);
+  Mongo.getReviews(req, res, req.params.id);
 });
 
-app.post('/restaurants/:id/reviews', (req, res) => {
-  Postgres.postReview(req, res, req.params.id);
-})
+// app.post('/restaurants/:id/reviews', (req, res) => {
+//   Postgres.postReview(req, res, req.params.id);
+// })
 
 app.get('/reviews/seed', (req, res) => {
   // seed the data base using and api

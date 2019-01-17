@@ -29,23 +29,23 @@ class Review extends React.Component {
 
       console.log('DATA ', data);
 
-      let restaurant_name = data[0]['name'] || '';
-      let reviews_number = data.length || 0;
+      let restaurant_name = data['restaurant_name'] || '';
+      let reviews_number = data.reviews.length || 0;
       let rating = 0;
       let delivery_rating = 0;
       let order_rating = 0;
       let num_of_reviews = {};
 
       // calculate the summation of rating, delivery_rating and order_rating
-      data.forEach(review => {
-        rating += review['rating'] || 0;
-        delivery_rating += review['delivery_rating'] || 0;
-        order_rating += review['order_rating'] || 0;
+      data.reviews.forEach(review => {
+        rating += review.rating || 0;
+        delivery_rating += review.delivery_rating || 0;
+        order_rating += review.order_rating || 0;
         num_of_reviews[review['user_name']] = (num_of_reviews[review['user_name']]  || 0) + 1;
       });
 
       this.setState({
-        reviews: data,
+        reviews: data.reviews,
         restaurant_name: restaurant_name,
         reviews_number: reviews_number,
         rating: rating,

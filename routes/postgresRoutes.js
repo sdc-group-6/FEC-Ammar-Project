@@ -7,17 +7,17 @@ var db = pgp(config);
 //CRUD
 
 //Create - post
-// app.post('/reviews:restaurant_id', (req, res) => {
-//   var query = `INSERT INTO reviews (user_name, restaurant_id, content, order_itmes, rating, delivery_rating, order_rating, update_data) 
-//   VALUES (${user_name}, ${req.params.restaurant_id}, ${content}, ${order_items}, ${rating}, ${deilvery_rating}, ${order_rating}, ${update_date})`;
-//   db.one(query)
-//   .then((data) => {
-//     console.log('Insert Complete');
-//   })
-//   .catch((err) => {
-//     console.log('Error', err);
-//   }
-// );
+var postReview = function(req, res, restaurantId) {
+  var query = `INSERT INTO reviews (user_name, restaurant_id, content, order_itmes, rating, delivery_rating, order_rating, update_data) 
+  VALUES (${user_name}, ${req.params.restaurant_id}, ${content}, ${order_items}, ${rating}, ${deilvery_rating}, ${order_rating}, ${update_date})`;
+  db.one(query)
+  .then((data) => {
+    console.log('Insert Complete');
+  })
+  .catch((err) => {
+    console.log('Error', err);
+  }
+)};
 
 //Retrieve - get
 // app.get('/reviews:restaurant_id', (req, res) => {});
@@ -68,5 +68,5 @@ Update the text in the review
 // });
 
 module.exports = {
-  getReviews, 
+  getReviews, postReview
 }
