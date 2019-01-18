@@ -27,8 +27,6 @@ class Review extends React.Component {
     .then(response => response.json())
     .then(data => {
 
-      console.log('DATA ', data);
-
       let restaurant_name = data['restaurant_name'] || '';
       let reviews_number = data.reviews.length || 0;
       let rating = 0;

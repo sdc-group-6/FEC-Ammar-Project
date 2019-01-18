@@ -1,11 +1,15 @@
+require('newrelic');
 const express = require('express');
 const bodyParser = require('body-parser');
 const path = require('path');
+const morgan = require('morgan');
 const db = require('../database/db_modules');
 const { seedDB } = require('../database/seeds');
 const Mongo = require('../routes/mongoRoutes.js');
 
+
 const app = express();
+app.use(morgan('short'));
 const PORT = 3005;
 
 app.use(bodyParser.json());

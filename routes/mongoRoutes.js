@@ -36,7 +36,6 @@ var getReviews = function(req, res, restaurantId) {
     if (err) {
       console.log('Error ', err);
     } else {
-      console.log('DATA Returned');
       res.send(data);
     }
   })
