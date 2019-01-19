@@ -35,9 +35,11 @@ app.get('/restaurants/:id/reviews', (req, res) => {
   Mongo.getReviews(req, res, req.params.id);
 });
 
-// app.post('/restaurants/:id/reviews', (req, res) => {
-//   Postgres.postReview(req, res, req.params.id);
-// })
+app.post('/restaurants/:id/reviews', (req, res) => {
+  console.log('REACH POST');
+  console.log('REQ.PARAMS ', req.params);
+  Mongo.createReview(req, res, req.params.id);
+})
 
 app.get('/reviews/seed', (req, res) => {
   // seed the data base using and api

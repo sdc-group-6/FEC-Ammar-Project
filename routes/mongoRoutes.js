@@ -41,6 +41,29 @@ var getReviews = function(req, res, restaurantId) {
   })
 }
 
+var createReview = function(req, res, restaurantId) {
+  
+  var newReview = {
+    user_name: req.body.user_name,
+    content: req.body.content,
+    order_items: req.body.order_items,
+    rating: req.body.rating,
+    delivery_rating: req.body.delivery_rating,
+    order_rating: req.body.order_rating,
+    update_date: req.body.update_date
+  };
+
+  restaurants.findOneAndUpdate({id: req.params.id}, {$push:{reviews: newReview}}, function(err) {
+    if (err) {
+      console.log('Error posting Data ', err); 
+      } else {
+        console.log('Post successful');
+        res.sendStatus(200);
+      }
+    }
+  );
+}
+
 module.exports = {
-  getReviews,
+  getReviews, createReview
 }
