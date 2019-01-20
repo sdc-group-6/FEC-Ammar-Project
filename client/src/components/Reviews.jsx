@@ -23,7 +23,7 @@ class Review extends React.Component {
 
     const id = window.location.pathname.substring(13);
 
-    fetch(`${id}/reviews`)
+    fetch(`http://localhost:3005/restaurants/${id}/reviews`)
     .then(response => response.json())
     .then(data => {
 

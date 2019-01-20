@@ -1,5 +1,7 @@
 var mongoose = require('mongoose');
 const mongoURI = 'mongodb://localhost:27017/restaurants';
+var redisClient = require('redis').createClient;
+var redis = redisClient(6379, 'localhost');
 const db = mongoose.connect(mongoURI, { useNewUrlParser: true });
 
 var Schema = mongoose.Schema;
@@ -30,19 +32,46 @@ var restaurantSchema = new Schema ({
 
 const restaurants = mongoose.model('restaurants', restaurantSchema);
 
-var getReviews = function(req, res, restaurantId) {
-  var query = restaurants.where({id: restaurantId});
-  query.findOne((err, data) => {
-    if (err) {
-      console.log('Error ', err);
+var getReviews = function(req, res, restaurant_id) {
+  redis.get(restaurant_id, (err, data) => {
+    if(err) {
+      console.log('restaurant not cached', err);
+    } else if(data) {
+      // console.log('sending cached data');
+      // console.log('CACHED DATA ', JSON.parse(data));
+      res.send(JSON.parse(data));
     } else {
-      res.send(data);
+      // var query = restaurants.where({id: restaurant_id});
+      // query.findOne((err, data) => {
+      restaurants.find({id: restaurant_id}, (err, data) => {
+        if (err) {
+          console.log('Error ', err);
+        } else {
+          var restaurant = data[0];
+          if (restaurant.reviews.length > 10) {
+            var top10 = [];
+            for (var i = 0; i < 10; i++) {
+              top10.push(restaurant.reviews[i]);
+            }
+            restaurant = {
+              id: restaurant.id,
+              restaurant_name: restaurant.restaurant_name,
+              reviews: top10,
+            }
+          }
+          redis.set(restaurant_id, JSON.stringify(restaurant), () => {
+            // console.log('data has been cached');
+            // console.log('data that has been cached ', data);
+            res.send(restaurant);
+          })
+        }
+      });
     }
   })
 }
 
 var createReview = function(req, res, restaurantId) {
-  
+
   var newReview = {
     user_name: req.body.user_name,
     content: req.body.content,

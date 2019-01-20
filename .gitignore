@@ -4,3 +4,4 @@ example/
 public/
 client/dist/bundle.js
 ./postgres-seeding/data/
+newrelic.js
