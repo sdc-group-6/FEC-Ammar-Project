@@ -5,3 +5,6 @@ public/
 client/dist/bundle.js
 ./postgres-seeding/data/
 newrelic.js
+./routes/mongo_config.js
+./routes/config.js
+dump.rdb
