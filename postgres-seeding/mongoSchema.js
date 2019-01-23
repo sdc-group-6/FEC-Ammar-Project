@@ -1,12 +1,11 @@
 var mongoose = require('mongoose');
 const faker = require('faker');
 const fs = require('fs');
-const config = require('./mongo_config.js');
+const config = require('../routes/mongo_config.js');
 var Schema = mongoose.Schema;
 
 // const mongoURI = 'mongodb://localhost:27017/restaurants'; //local
-
-
+const mongoURI = `mongodb://${config.username}:${config.password}@${config.IPaddress}:${config.port}/${config.dbName}`
 
 const db = mongoose.connect(mongoURI, { useNewUrlParser: true });
 
