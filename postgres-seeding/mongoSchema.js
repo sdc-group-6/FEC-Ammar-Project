@@ -1,9 +1,12 @@
 var mongoose = require('mongoose');
 const faker = require('faker');
 const fs = require('fs');
+const config = require('./mongo_config.js');
 var Schema = mongoose.Schema;
 
-const mongoURI = 'mongodb://localhost:27017/restaurants';
+// const mongoURI = 'mongodb://localhost:27017/restaurants'; //local
+const mongoURI = 'mongodb://paul:password@13.57.182.185:27017/restaurants';
+
 
 const db = mongoose.connect(mongoURI, { useNewUrlParser: true });
 
@@ -30,7 +33,7 @@ var reviewsSchema = new Schema({
 })
 
 var restaurantSchema = new Schema ({
-  id: Number, 
+  id: {type: Number, index: true },  
   restaurant_name: String,
   reviews: [reviewsSchema],
 

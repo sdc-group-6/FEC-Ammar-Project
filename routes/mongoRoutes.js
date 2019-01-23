@@ -32,6 +32,28 @@ var restaurantSchema = new Schema ({
 
 const restaurants = mongoose.model('restaurants', restaurantSchema);
 
+// var getReviews = function(req, res, restaurant_id) {
+//   restaurants.find({id: restaurant_id}, (err, data) => {
+//     if(err) {
+//       console.log('Error ', err);
+//     } else if (data) {
+//       var restaurant = data[0];
+//       if (restaurant.reviews.length > 10) {
+//         var top10 = [];
+//         for (var i = 0; i < 10; i++) {
+//           top10.push(restaurant.reviews[i]);
+//         }
+//         restaurant = {
+//           id: restaurant.id,
+//           restaurant_name: restaurant.restaurant_name,
+//           reviews: top10,
+//         }
+//       }
+//       res.send(restaurant);
+//     }
+//   });
+// }
+
 var getReviews = function(req, res, restaurant_id) {
   redis.get(restaurant_id, (err, data) => {
     if(err) {
