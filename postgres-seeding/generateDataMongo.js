@@ -52,12 +52,12 @@ async function seed1000Reviews(batchNum, restaurantNum, reviewNum) {
 
 async function timeSeed () {
   var before = Date.now();
-  await seed1000Reviews(20, 250, 1000);
-  await seed1000Reviews(20, 2500, 100);
-  await seed1000Reviews(20, 25000, 10);
-  await seed1000Reviews(40, 50000, 5);
-  await seed1000Reviews(100, 50000, 1);
-  await seed1000Reviews(100, 50000, 0);
+  await seed1000Reviews(200, 25, 1000); //5,000
+  await seed1000Reviews(200, 250, 100); //50,000
+  await seed1000Reviews(200, 2500, 10); //500,000
+  await seed1000Reviews(400, 5000, 5); // 2,000,000
+  await seed1000Reviews(1000, 5000, 1); // 5,000,000
+  await seed1000Reviews(500, 5000, 0); //2,500,000
   var after = Date.now();
   console.log(`MongoDB seeding finished in ${(after - before) / 60000} minutes!`)
 } 
